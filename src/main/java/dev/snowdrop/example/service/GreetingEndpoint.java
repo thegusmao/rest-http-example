@@ -17,16 +17,16 @@ package dev.snowdrop.example.service;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Component;
 
 @RestController
 @RequestMapping(value = "/greeting") 
 public class GreetingEndpoint {
     
     @ResponseBody 
-    @GetMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Greeting greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name) {
         final String message = String.format(Greeting.FORMAT, name);
         return new Greeting(message);
     }
 }
+
