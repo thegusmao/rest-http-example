@@ -23,9 +23,6 @@ import org.springframework.stereotype.Component;
 @RequestMapping(value = "/greeting") 
 public class GreetingEndpoint {
     
-    @GET
-    @Produces("application/json")
-    
     @ResponseBody 
     @GetMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
     public Greeting greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name) {
